@@ -1,0 +1,119 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+
+/* ==============================
+   CABEÇALHO
+   ============================== */
+
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+
+/* ==============================
+   CONTEÚDO PRINCIPAL
+   ============================== */
+
+main {
+    padding: 20px;
+}
+
+section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+/* ==============================
+   SERVIÇOS
+   ============================== */
+
+.lista-servicos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card-servico {
+    padding: 20px;
+}
+
+
+/* ==============================
+   ORÇAMENTO
+   ============================== */
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form p {
+    margin: 15px 0;
+}
+
+input,
+select,
+textarea,
+button {
+    width: 100%;
+    padding: 10px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* ==============================
+   RODAPÉ
+   ============================== */
+
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+   ============================== */
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    .lista-servicos {
+        grid-template-columns: 1fr;
+    }
+
+}
