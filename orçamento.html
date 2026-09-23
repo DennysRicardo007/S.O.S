@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Orçamento | S.O.S. Concerto de Roupas</title>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+
+        <h1>S.O.S. Concerto de Roupas</h1>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="orcamento.html">Orçamento</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Conteúdo principal -->
+    <main>
+
+        <section id="orcamento">
+
+            <h2>Solicite seu orçamento</h2>
+
+            <p>
+                Preencha as informações abaixo para solicitar
+                um orçamento.
+            </p>
+
+
+            <!-- Formulário -->
+            <form id="formulario-orcamento">
+
+                <!-- Nome -->
+                <div class="campo">
+
+                    <label for="nome">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite seu nome"
+                    >
+
+                </div>
+
+
+                <!-- WhatsApp -->
+                <div class="campo">
+
+                    <label for="whatsapp">
+                        WhatsApp
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="whatsapp"
+                        name="whatsapp"
+                        placeholder="Digite seu WhatsApp"
+                    >
+
+                </div>
+
+
+                <!-- Tipo de peça -->
+                <div class="campo">
+
+                    <label for="peca">
+                        Tipo de peça
+                    </label>
+
+                    <select id="peca" name="peca">
+
+                        <option value="">
+                            Selecione uma peça
+                        </option>
+
+                        <option value="calca">
+                            Calça
+                        </option>
+
+                        <option value="camisa">
+                            Camisa
+                        </option>
+
+                        <option value="vestido">
+                            Vestido
+                        </option>
+
+                        <option value="blusa">
+                            Blusa
+                        </option>
+
+                        <option value="jaqueta">
+                            Jaqueta
+                        </option>
+
+                        <option value="outra">
+                            Outra
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Serviço -->
+                <div class="campo">
+
+                    <label for="servico">
+                        Serviço desejado
+                    </label>
+
+                    <select id="servico" name="servico">
+
+                        <option value="">
+                            Selecione um serviço
+                        </option>
+
+                        <option value="ajuste">
+                            Ajuste
+                        </option>
+
+                        <option value="barra">
+                            Barra
+                        </option>
+
+                        <option value="conserto">
+                            Conserto
+                        </option>
+
+                        <option value="troca-ziper">
+                            Troca de zíper
+                        </option>
+
+                        <option value="outro">
+                            Outro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Descrição -->
+                <div class="campo">
+
+                    <label for="descricao">
+                        Descreva o que precisa ser feito
+                    </label>
+
+                    <textarea
+                        id="descricao"
+                        name="descricao"
+                        rows="5"
+                        placeholder="Explique o que precisa ser ajustado ou consertado"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Foto -->
+                <div class="campo">
+
+                    <label for="foto">
+                        Foto da peça (opcional)
+                    </label>
+
+                    <input
+                        type="file"
+                        id="foto"
+                        name="foto"
+                        accept="image/*"
+                    >
+
+                </div>
+
+
+                <!-- Botão -->
+                <button type="submit">
+                    Solicitar orçamento
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Rodapé -->
+    <footer>
+
+        <p>
+            &copy; 2026 S.O.S. Concerto de Roupas
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
