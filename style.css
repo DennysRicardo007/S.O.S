@@ -12,10 +12,19 @@ html {
 
 body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #FAEEE7;
+    background: linear-gradient(180deg, #fff8f4 0%, #f8eae2 100%);
     color: #202328;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Playfair Display", Georgia, serif;
+    letter-spacing: 0.02em;
+}
+
+header h1 {
+    font-family: "Playfair Display", Georgia, serif;
 }
 
 
@@ -24,9 +33,9 @@ body {
    ============================== */
 
 header {
-    padding: 26px 20px 20px;
+    padding: 26px 20px 18px;
     text-align: center;
-    background: linear-gradient(180deg, #f8ece4 0%, #f1dfd5 100%);
+    background: linear-gradient(135deg, #f9efe8 0%, #f3d9cc 100%);
     color: #202328;
     border-bottom: 1px solid rgba(32, 35, 40, 0.08);
 }
@@ -37,15 +46,13 @@ header {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 18px;
+    margin: 0 auto 18px;
     padding: 18px 24px 14px;
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(202, 53, 46, 0.08);
-    border-radius: 24px;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 6px 14px rgba(32, 35, 40, 0.04);
+    border-radius: 28px;
+    max-width: 560px;
+    box-shadow: 0 10px 22px rgba(32, 35, 40, 0.06);
 }
 
 .logo {
@@ -61,7 +68,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+    font-size: clamp(1.5rem, 2.8vw, 2.2rem);
     line-height: 1.2;
     letter-spacing: 0.4px;
     font-weight: 700;
@@ -71,7 +78,8 @@ header h1 {
 nav {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
@@ -85,16 +93,17 @@ nav a {
     padding: 10px 18px;
     border-radius: 12px;
     font-weight: 700;
-    background-color: rgba(255, 255, 255, 0.65);
+    background-color: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(32, 35, 40, 0.08);
     transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(32, 35, 40, 0.03);
 }
 
 nav a:hover {
     background-color: #CA352E;
     color: #FFFFFF;
     transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(202, 53, 46, 0.18);
+    box-shadow: 0 8px 16px rgba(202, 53, 46, 0.18);
 }
 
 
@@ -114,10 +123,10 @@ section {
 
 #inicio {
     text-align: center;
-    background-color: #FFFFFF;
+    background: linear-gradient(180deg, #ffffff 0%, #fff9f7 100%);
     border-radius: 24px;
-    padding: 50px 30px;
-    box-shadow: 0 12px 30px rgba(32, 35, 40, 0.08);
+    padding: 52px 30px;
+    box-shadow: 0 16px 32px rgba(32, 35, 40, 0.08);
     border: 1px solid #F0D9CF;
 }
 
@@ -153,21 +162,95 @@ section a {
     padding: 12px 22px;
     text-decoration: none;
     border-radius: 12px;
-    background-color: #CA352E;
+    background: linear-gradient(135deg, #d4433d 0%, #bd2a29 100%);
     color: #FFFFFF;
-    font-weight: 600;
-    transition: background-color 0.2s ease;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 16px rgba(202, 53, 46, 0.18);
 }
 
 section a:hover {
-    background-color: #A92320;
+    background: linear-gradient(135deg, #c03b36 0%, #a92422 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 18px rgba(202, 53, 46, 0.22);
 }
 
 #destaques,
-#sobre {
-    background-color: rgba(255, 255, 255, 0.45);
+#sobre,
+#contato-rapido,
+#servicos,
+#orcamento,
+#experiencia,
+#empresa,
+#diferenciais {
+    background: rgba(255, 255, 255, 0.54);
     border-radius: 24px;
     border: 1px solid #F0D9CF;
+    box-shadow: 0 10px 24px rgba(32, 35, 40, 0.05);
+}
+
+#contato-rapido {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#contato-rapido h2 {
+    margin-bottom: 12px;
+}
+
+.botoes-contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.botao-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    padding: 0;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    margin-top: 0;
+}
+
+.botao-social:hover {
+    transform: translateY(-2px) scale(1.03);
+}
+
+.icone-social {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.botao-social.whatsapp .icone-social {
+    width: 26px;
+    height: 26px;
+    transform: scale(1.02);
+}
+
+.botao-social.instagram .icone-social {
+    width: 34px;
+    height: 34px;
+    transform: scale(1.12);
+}
+
+.botao-social.whatsapp {
+    background-color: #25D366;
+}
+
+.botao-social.instagram {
+    background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #F77737 100%);
 }
 
 
@@ -184,16 +267,16 @@ section a:hover {
 
 .card-servico {
     padding: 24px 20px;
-    background-color: #FFFFFF;
-    border: 1px solid #E5C8BC;
+    background: linear-gradient(180deg, #ffffff 0%, #fff7f4 100%);
+    border: 1px solid #E9CDBD;
     border-radius: 18px;
-    box-shadow: 0 8px 18px rgba(32, 35, 40, 0.04);
+    box-shadow: 0 10px 18px rgba(32, 35, 40, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card-servico:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 22px rgba(32, 35, 40, 0.08);
+    box-shadow: 0 14px 24px rgba(32, 35, 40, 0.08);
 }
 
 .card-servico h3 {
@@ -330,8 +413,13 @@ footer {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+    .lista-servicos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
+@media (max-width: 700px) {
     header {
         padding-left: 15px;
         padding-right: 15px;
@@ -361,6 +449,15 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .botoes-contato {
+        flex-direction: column;
+    }
+
+    .botao-social {
+        width: 58px;
+        height: 58px;
+    }
+
     section {
         padding: 30px 15px;
     }
@@ -377,4 +474,7 @@ footer {
         max-width: 100%;
     }
 
+    footer {
+        padding: 18px 12px;
+    }
 }

@@ -1,5 +1,14 @@
 const formulario = document.getElementById("formulario-orcamento");
 
+function capitalizarPrimeiraLetra(valor) {
+    if (!valor) return "";
+
+    const texto = valor.trim();
+    if (!texto) return "";
+
+    return texto.charAt(0).toUpperCase() + texto.slice(1);
+}
+
 if (formulario) {
     formulario.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -15,21 +24,22 @@ if (formulario) {
             return;
         }
 
-        const mensagem = `
-🧵 *NOVO PEDIDO DE ORÇAMENTO*
+        const nomeFormatado = capitalizarPrimeiraLetra(nome);
+        const mensagem = [
+            "🧵 *NOVO PEDIDO DE ORÇAMENTO*",
+            "",
+            `👤 *Nome:* ${nomeFormatado}`,
+            `📱 *WhatsApp:* ${whatsapp}`,
+            `👕 *Peça:* ${peca}`,
+            `✂️ *Serviço:* ${servico}`,
+            "",
+            "📝 *Descrição:*",
+            descricao,
+            "",
+            "📌 Solicitação enviada pelo site S.O.S. Roupas."
+        ].join("\n");
 
-👤 *Nome:* ${nome}
-📱 *WhatsApp:* ${whatsapp}
-👕 *Peça:* ${peca}
-✂️ *Serviço:* ${servico}
-
-📝 *Descrição:*
-${descricao}
-
-📌 Solicitação enviada pelo site S.O.S. Roupas.
-`;
-
-        const numero = "5581995189725";
+        const numero = "558188065989";
         const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 
         window.open(url, "_blank");
