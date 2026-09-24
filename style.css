@@ -13,6 +13,7 @@ html {
 body {
     margin: 0;
     font-family: sans-serif;
+    line-height: 1.6;
 }
 
 
@@ -25,10 +26,15 @@ header {
     text-align: center;
 }
 
+header h1 {
+    margin-bottom: 20px;
+}
+
 nav {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -50,6 +56,27 @@ section {
     padding: 40px 20px;
 }
 
+section h2 {
+    margin-bottom: 20px;
+}
+
+section p {
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+   LINKS E BOTÕES
+   ============================== */
+
+section a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
 
 /* ==============================
    SERVIÇOS
@@ -59,10 +86,55 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    margin-top: 25px;
 }
 
 .card-servico {
     padding: 20px;
+    border-radius: 15px;
+}
+
+.card-servico h3 {
+    margin-top: 0;
+}
+
+
+/* ==============================
+   SOBRE
+   ============================== */
+
+#sobre p {
+    margin-bottom: 15px;
+}
+
+#experiencia p {
+    margin-bottom: 15px;
+}
+
+#empresa p {
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+   DIFERENCIAIS
+   ============================== */
+
+#diferenciais ul {
+    padding-left: 20px;
+}
+
+#diferenciais li {
+    margin-bottom: 8px;
+}
+
+
+/* ==============================
+   CHAMADA PARA ORÇAMENTO
+   ============================== */
+
+#chamada-orcamento {
+    text-align: center;
 }
 
 
@@ -75,8 +147,13 @@ form {
     margin: 0 auto;
 }
 
-form p {
-    margin: 15px 0;
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
 }
 
 input,
@@ -85,10 +162,17 @@ textarea,
 button {
     width: 100%;
     padding: 10px;
+    font-family: inherit;
+    border-radius: 10px;
 }
 
 textarea {
     resize: vertical;
+}
+
+button {
+    cursor: pointer;
+    border: none;
 }
 
 
@@ -106,14 +190,20 @@ footer {
    RESPONSIVIDADE
    ============================== */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     nav {
         flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
     .lista-servicos {
         grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 30px 15px;
     }
 
 }
