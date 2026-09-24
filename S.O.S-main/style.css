@@ -1,0 +1,374 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-color: #FAEEE7;
+    color: #202328;
+}
+
+
+/* ==============================
+   CABEÇALHO
+   ============================== */
+
+header {
+    padding: 26px 20px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #f8ece4 0%, #f1dfd5 100%);
+    color: #202328;
+    border-bottom: 1px solid rgba(32, 35, 40, 0.08);
+}
+
+.header-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding: 18px 24px 14px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(202, 53, 46, 0.08);
+    border-radius: 24px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 6px 14px rgba(32, 35, 40, 0.04);
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.08));
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+    line-height: 1.2;
+    letter-spacing: 0.4px;
+    font-weight: 700;
+    color: #202328;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #202328;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #CA352E;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(202, 53, 46, 0.18);
+}
+
+
+/* ==============================
+   CONTEÚDO PRINCIPAL
+   ============================== */
+
+main {
+    padding: 30px 20px 40px;
+}
+
+section {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    padding: 40px 20px;
+}
+
+#inicio {
+    text-align: center;
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    padding: 50px 30px;
+    box-shadow: 0 12px 30px rgba(32, 35, 40, 0.08);
+    border: 1px solid #F0D9CF;
+}
+
+#inicio h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 16px;
+    color: #202328;
+}
+
+#inicio p {
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    color: #202328;
+}
+
+section p {
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+   LINKS E BOTÕES
+   ============================== */
+
+section a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 12px;
+    background-color: #CA352E;
+    color: #FFFFFF;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+section a:hover {
+    background-color: #A92320;
+}
+
+#destaques,
+#sobre {
+    background-color: rgba(255, 255, 255, 0.45);
+    border-radius: 24px;
+    border: 1px solid #F0D9CF;
+}
+
+
+/* ==============================
+   SERVIÇOS
+   ============================== */
+
+.lista-servicos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.card-servico {
+    padding: 24px 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #E5C8BC;
+    border-radius: 18px;
+    box-shadow: 0 8px 18px rgba(32, 35, 40, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-servico:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 22px rgba(32, 35, 40, 0.08);
+}
+
+.card-servico h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #CA352E;
+    font-size: 1.5rem;
+}
+
+
+/* ==============================
+   SOBRE
+   ============================== */
+
+#sobre p {
+    margin-bottom: 15px;
+}
+
+#experiencia p {
+    margin-bottom: 15px;
+}
+
+#empresa p {
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+   DIFERENCIAIS
+   ============================== */
+
+#diferenciais ul {
+    padding-left: 20px;
+}
+
+#diferenciais li {
+    margin-bottom: 8px;
+}
+
+
+/* ==============================
+   CHAMADA PARA ORÇAMENTO
+   ============================== */
+
+#chamada-orcamento {
+    text-align: center;
+    background-color: #F7DFD3;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+#chamada-orcamento h2 {
+    color: #CA352E;
+}
+
+
+/* ==============================
+   ORÇAMENTO
+   ============================== */
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea,
+button {
+    width: 100%;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #202328;
+    background-color: #FFFFFF;
+    border: 1px solid #E5C8BC;
+    border-radius: 10px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #CA352E;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: #CA352E;
+    color: #FFFFFF;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #A92320;
+    transform: translateY(-1px);
+}
+
+
+/* ==============================
+   RODAPÉ
+   ============================== */
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #202328;
+    color: #FFFFFF;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+   ============================== */
+
+@media (max-width: 900px) {
+    .lista-servicos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+
+    header {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .header-brand {
+        max-width: 100%;
+        padding: 16px 18px 12px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav a {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .lista-servicos {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    #inicio {
+        padding: 36px 18px;
+    }
+
+    #inicio h2 {
+        font-size: 2rem;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+}
