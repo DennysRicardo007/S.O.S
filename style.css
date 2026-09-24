@@ -450,10 +450,13 @@ footer {
     }
 
     .botoes-contato {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: clamp(10px, 5vw, 18px);
     }
 
     .botao-social {
+        flex: 0 0 58px;
         width: 58px;
         height: 58px;
     }
