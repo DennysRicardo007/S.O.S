@@ -76,11 +76,17 @@ nav {
 }
 
 nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
     text-decoration: none;
     color: #202328;
-    padding: 8px 15px;
-    border-radius: 10px;
-    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(32, 35, 40, 0.08);
     transition: all 0.2s ease;
 }
 
