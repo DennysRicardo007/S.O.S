@@ -266,6 +266,7 @@ section a:hover {
 }
 
 .card-servico {
+    cursor: pointer;
     padding: 24px 20px;
     background: linear-gradient(180deg, #ffffff 0%, #fff7f4 100%);
     border: 1px solid #E9CDBD;
@@ -277,6 +278,39 @@ section a:hover {
 .card-servico:hover {
     transform: translateY(-4px);
     box-shadow: 0 14px 24px rgba(32, 35, 40, 0.08);
+}
+
+.icone-servico {
+    display: block;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 16px;
+    color: #2F6F73;
+}
+
+.icone-servico svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#servicos .card-servico:nth-child(n+10):nth-child(-n+13) .icone-servico,
+#destaques .card-servico:nth-child(2) .icone-servico {
+    color: #B36A2E;
+}
+
+#servicos .card-servico:nth-child(n+14):nth-child(-n+17) .icone-servico,
+#destaques .card-servico:nth-child(3) .icone-servico {
+    color: #CA352E;
+}
+
+#servicos .card-servico:nth-child(n+18):nth-child(-n+20) .icone-servico {
+    color: #5B6472;
 }
 
 .card-servico h3 {

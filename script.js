@@ -1,4 +1,30 @@
 const formulario = document.getElementById("formulario-orcamento");
+const cardsServico = document.querySelectorAll(".card-servico");
+
+cardsServico.forEach(function (card) {
+    card.addEventListener("click", function () {
+        const nomeServico = card.querySelector("h3").textContent.trim();
+        const url = `orcamento.html?servico=${encodeURIComponent(nomeServico)}`;
+
+        window.location.href = url;
+    });
+});
+
+const campoServico = document.getElementById("servico");
+const servicoSelecionado = new URLSearchParams(window.location.search).get("servico");
+
+if (campoServico && servicoSelecionado) {
+    const opcaoExistente = Array.from(campoServico.options).find(function (opcao) {
+        return opcao.value === servicoSelecionado;
+    });
+
+    if (!opcaoExistente) {
+        const novaOpcao = new Option(servicoSelecionado, servicoSelecionado);
+        campoServico.add(novaOpcao);
+    }
+
+    campoServico.value = servicoSelecionado;
+}
 
 function capitalizarPrimeiraLetra(valor) {
     if (!valor) return "";
