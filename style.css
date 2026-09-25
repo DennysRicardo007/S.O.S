@@ -88,14 +88,18 @@ nav a {
     align-items: center;
     justify-content: center;
     min-width: 120px;
+    min-height: 44px;
     text-decoration: none;
     color: #202328;
     padding: 10px 18px;
     border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
     font-weight: 700;
+    line-height: 1.2;
     background-color: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(32, 35, 40, 0.08);
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 2px 6px rgba(32, 35, 40, 0.03);
 }
 
@@ -268,16 +272,27 @@ section a:hover {
 .card-servico {
     cursor: pointer;
     padding: 24px 20px;
-    background: linear-gradient(180deg, #ffffff 0%, #fff7f4 100%);
-    border: 1px solid #E9CDBD;
+    background: #FFFFFF;
+    border: 1px solid #DCE3E0;
     border-radius: 18px;
-    box-shadow: 0 10px 18px rgba(32, 35, 40, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 16px rgba(32, 35, 40, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card-servico:hover {
     transform: translateY(-4px);
-    box-shadow: 0 14px 24px rgba(32, 35, 40, 0.08);
+    border-color: #CA352E;
+    box-shadow: 0 12px 22px rgba(32, 35, 40, 0.09);
+}
+
+#destaques .card-servico {
+    cursor: default;
+}
+
+#destaques .card-servico:hover {
+    transform: none;
+    border-color: #DCE3E0;
+    box-shadow: 0 6px 16px rgba(32, 35, 40, 0.04);
 }
 
 .icone-servico {
@@ -316,7 +331,7 @@ section a:hover {
 .card-servico h3 {
     margin-top: 0;
     margin-bottom: 12px;
-    color: #CA352E;
+    color: #334744;
     font-size: 1.5rem;
 }
 
@@ -424,28 +439,86 @@ button:hover {
     transform: translateY(-1px);
 }
 
+.botao-adicionar-servico {
+    width: auto;
+    margin-top: 10px;
+    padding: 4px 0;
+    background: transparent;
+    color: #2F6F73;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.botao-adicionar-servico:hover,
+.remover-servico:hover {
+    background: transparent;
+    transform: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.servico-adicional {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.servico-adicional-campo {
+    min-width: 0;
+}
+
+.remover-servico {
+    grid-column: 1 / -1;
+    justify-self: end;
+    width: auto;
+    padding: 10px 0;
+    background: transparent;
+    color: #5B6472;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
 
 /* ==============================
    RODAPÉ
    ============================== */
 
 footer {
-    padding: 20px;
+    padding: 16px 20px;
     text-align: center;
     background-color: #202328;
     color: #FFFFFF;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+.footer-credit {
+    margin-top: 3px;
+    font-size: 0.82rem;
+}
+
+footer a {
+    color: #B8D8D3;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 
 /* ==============================
    RESPONSIVIDADE
    ============================== */
-
-@media (max-width: 900px) {
-    .lista-servicos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
 
 @media (max-width: 900px) {
     .lista-servicos {
@@ -469,17 +542,25 @@ footer {
     }
 
     nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 420px;
+        margin: 0 auto;
+        gap: 8px;
     }
 
     nav a {
-        width: 100%;
-        max-width: 220px;
+        width: auto;
+        min-width: 0;
+        padding: 10px 8px;
+        border-radius: 8px;
     }
 
     .lista-servicos {
+        grid-template-columns: 1fr;
+    }
+
+    .servico-adicional {
         grid-template-columns: 1fr;
     }
 

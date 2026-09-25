@@ -11,6 +11,7 @@ cardsServico.forEach(function (card) {
 });
 
 const campoServico = document.getElementById("servico");
+const campoPeca = document.getElementById("peca");
 const servicoSelecionado = new URLSearchParams(window.location.search).get("servico");
 
 if (campoServico && servicoSelecionado) {
@@ -26,6 +27,51 @@ if (campoServico && servicoSelecionado) {
     campoServico.value = servicoSelecionado;
 }
 
+const servicosAdicionais = document.getElementById("servicos-adicionais");
+const botaoAdicionarServico = document.getElementById("adicionar-servico");
+let contadorServicosAdicionais = 0;
+
+if (campoServico && campoPeca && servicosAdicionais && botaoAdicionarServico) {
+    botaoAdicionarServico.addEventListener("click", function () {
+        contadorServicosAdicionais += 1;
+
+        const linhaServico = document.createElement("div");
+        const campoAdicionalServico = document.createElement("div");
+        const campoAdicionalPeca = document.createElement("div");
+        const rotuloServico = document.createElement("label");
+        const rotuloPeca = document.createElement("label");
+        const seletorServico = campoServico.cloneNode(true);
+        const seletorPeca = campoPeca.cloneNode(true);
+        const botaoRemover = document.createElement("button");
+
+        linhaServico.className = "servico-adicional";
+        campoAdicionalServico.className = "servico-adicional-campo";
+        campoAdicionalPeca.className = "servico-adicional-campo";
+        seletorServico.id = `servico-adicional-${contadorServicosAdicionais}`;
+        seletorServico.name = "servico-adicional";
+        seletorServico.value = "";
+        seletorPeca.id = `peca-adicional-${contadorServicosAdicionais}`;
+        seletorPeca.name = "peca-adicional";
+        seletorPeca.value = "";
+        rotuloServico.htmlFor = seletorServico.id;
+        rotuloServico.textContent = "Serviço adicional";
+        rotuloPeca.htmlFor = seletorPeca.id;
+        rotuloPeca.textContent = "Tipo de peça";
+        botaoRemover.type = "button";
+        botaoRemover.className = "remover-servico";
+        botaoRemover.textContent = "Remover";
+        botaoRemover.setAttribute("aria-label", `Remover serviço adicional ${contadorServicosAdicionais}`);
+        botaoRemover.addEventListener("click", function () {
+            linhaServico.remove();
+        });
+
+        campoAdicionalServico.append(rotuloServico, seletorServico);
+        campoAdicionalPeca.append(rotuloPeca, seletorPeca);
+        linhaServico.append(campoAdicionalServico, campoAdicionalPeca, botaoRemover);
+        servicosAdicionais.append(linhaServico);
+    });
+}
+
 function capitalizarPrimeiraLetra(valor) {
     if (!valor) return "";
 
@@ -35,18 +81,41 @@ function capitalizarPrimeiraLetra(valor) {
     return texto.charAt(0).toUpperCase() + texto.slice(1);
 }
 
+function obterRotuloSelecionado(seletor) {
+    return seletor.options[seletor.selectedIndex]?.textContent.trim() || "";
+}
+
 if (formulario) {
     formulario.addEventListener("submit", function (event) {
         event.preventDefault();
 
         const nome = document.getElementById("nome").value.trim();
         const whatsapp = document.getElementById("whatsapp").value.trim();
-        const peca = document.getElementById("peca").value;
-        const servico = document.getElementById("servico").value;
+        const itensOrcamento = [
+            {
+                peca: campoPeca,
+                servico: campoServico
+            },
+            ...Array.from(formulario.querySelectorAll(".servico-adicional"), function (linha) {
+                return {
+                    peca: linha.querySelector("select[name='peca-adicional']"),
+                    servico: linha.querySelector("select[name='servico-adicional']")
+                };
+            })
+        ].map(function (item) {
+            return {
+                peca: item.peca.value.trim(),
+                pecaNome: obterRotuloSelecionado(item.peca),
+                servico: item.servico.value.trim(),
+                servicoNome: obterRotuloSelecionado(item.servico)
+            };
+        });
         const descricao = document.getElementById("descricao").value.trim();
 
-        if (!nome || !whatsapp || !peca || !servico || !descricao) {
-            alert("Preencha todos os campos antes de enviar o orçamento.");
+        if (!nome || !whatsapp || !descricao || itensOrcamento.some(function (item) {
+            return !item.peca || !item.servico;
+        })) {
+            alert("Preencha seus dados e selecione uma peça e um serviço para cada item do orçamento.");
             return;
         }
 
@@ -56,8 +125,9 @@ if (formulario) {
             "",
             `👤 *Nome:* ${nomeFormatado}`,
             `📱 *WhatsApp:* ${whatsapp}`,
-            `👕 *Peça:* ${peca}`,
-            `✂️ *Serviço:* ${servico}`,
+            `👕 *Peça(s) e serviço(s):*\n${itensOrcamento.map(function (item) {
+                return `- ${item.pecaNome}: ${item.servicoNome}`;
+            }).join("\n")}`,
             "",
             "📝 *Descrição:*",
             descricao,
@@ -70,5 +140,9 @@ if (formulario) {
 
         window.open(url, "_blank");
         formulario.reset();
+
+        if (servicosAdicionais) {
+            servicosAdicionais.replaceChildren();
+        }
     });
 }
